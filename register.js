@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('name').value;
 
             // Faz o cadastro no Supabase
-            const { data, error } = await supabase.auth.signUp({
+            const { data, error } = await window.supabaseClient.auth.signUp({
                 email: email,
                 password: password,
                 options: {
