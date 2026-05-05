@@ -1,4 +1,18 @@
+async function checarAcesso() {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+        // Se não tiver sessão (não está logado), manda para o login
+        window.location.href = '/entrar';
+    }
+}
+
+// Executa a checagem assim que a página abre
+checarAcesso();
+
 document.addEventListener('DOMContentLoaded', () => {
+    // ... aqui continua o restante do seu código original que carrega os desafios
+});document.addEventListener('DOMContentLoaded', () => {
     // State
     const totalDays = 60;
     let currentDay = 1;
