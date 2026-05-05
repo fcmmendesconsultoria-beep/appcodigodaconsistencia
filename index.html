@@ -57,5 +57,21 @@
         </main>
     </div>
     <script src="script.js"></script>
+    <script src="config.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    if (!window.supabaseClient) {
+        console.error("Supabase não carregado");
+        return;
+    }
+
+    const { data: { session } } = await window.supabaseClient.auth.getSession();
+
+    if (!session) {
+        window.location.href = 'login.html';
+    }
+});
+</script>
 </body>
 </html>
