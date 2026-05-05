@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de 60 Dias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="progress-indicator">
+                <span class="progress-text" id="progress-text">Dia 1 de 60</span>
+                <span class="progress-percentage" id="progress-percentage">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </header>
+
+        <main class="app-content">
+            <div class="action-card" id="action-card">
+                <h2 class="section-subtitle">Ação do Dia</h2>
+                <h1 class="action-title" id="action-title">Definir seus objetivos principais</h1>
+                <p class="action-description" id="action-description">
+                    Escreva no seu caderno quais são os 3 principais objetivos que você deseja alcançar nestes 60 dias. Seja específico e realista.
+                </p>
+                
+                <div class="action-input-group">
+                    <textarea id="action-notes" placeholder="Adicione suas anotações aqui (opcional)..." rows="4"></textarea>
+                </div>
+
+                <button class="btn-primary" id="complete-btn">
+                    <span>Concluir Dia</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="success-message hidden" id="success-message">
+                <div class="success-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="16 12 12 8 8 12"></polyline>
+                        <line x1="12" y1="16" x2="12" y2="8"></line>
+                    </svg>
+                </div>
+                <h2>Parabéns!</h2>
+                <p>Você concluiu a ação de hoje com sucesso.</p>
+                <p class="success-subtitle">O sucesso é a soma de pequenos esforços repetidos dia após dia.</p>
+                <button class="btn-secondary" id="next-day-btn">Ver próximo dia</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
