@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código da Consistência - Começar </title>
+    <title>Código da Consistência - Cadastro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,37 +19,34 @@
                 
                 <form id="register-form">
                     <div class="auth-input-group">
-                        <label for="name">Nome completo</label>
-                        <input type="text" id="name" required placeholder="Como deseja ser chamada?">
+                        <label for="name">Como posso te chamar?</label>
+                        <input type="text" id="name" required placeholder="Seu nome aqui">
                     </div>
 
                     <div class="auth-input-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" required placeholder="Seu melhor e-mail">
+                        <label for="email">Seu melhor e-mail</label>
+                        <input type="email" id="email" required placeholder="email@exemplo.com">
                     </div>
                     
                     <div class="auth-input-group">
-                        <label for="password">Senha</label>
+                        <label for="password">Crie uma senha</label>
                         <input type="password" id="password" required placeholder="Mínimo 6 caracteres" minlength="6">
                     </div>
                     
-                    <div id="auth-error" class="auth-error hidden"></div>
-                    <div id="auth-success" class="auth-success hidden">Conta criada com sucesso! Redirecionando...</div>
+                    <div id="auth-error" style="color: #ff4d4d; margin-bottom: 10px; text-align: center; display: none;"></div>
+                    <div id="auth-success" style="color: #2ecc71; margin-bottom: 10px; text-align: center; display: none;">Sucesso! Redirecionando...</div>
 
-                    <button type="submit" class="btn-primary" id="register-btn">
-                        <span>Cadastrar</span>
+                    <button type="submit" class="btn-primary" id="register-btn" style="width: 100%; cursor: pointer;">
+                        <span>Tô dentro!</span>
                     </button>
                 </form>
+                
                 <div class="auth-links" style="margin-top: 20px; text-align: center;">
                     <p style="color: white;">Já possui uma conta? <a href="/entrar" style="color: #D4AF37; font-weight: bold; text-decoration: underline;">Entrar</a></p>
                 </div>
             </div>
         </main>
     </div>
-    <script src="config.js"></script>
-    <script src="register.js"></script>
-</body>
-</html>
     <script src="config.js"></script>
     <script src="register.js"></script>
 </body>
