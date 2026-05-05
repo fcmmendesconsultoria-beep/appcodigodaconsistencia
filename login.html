@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código da Consistência Começar</title>
+    <title>Código da Consistência - Login</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
+
     <!-- Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -18,9 +21,13 @@
     <div class="app-container">
         <main class="app-content">
             <div class="auth-card">
-                <h1 class="action-title" style="text-align: center; margin-bottom: 8px;">Bem-vinda de volta</h1>
-                <p class="action-description" style="text-align: center; margin-bottom: 32px;">Acesse sua conta para
-                    continuar seu progresso.</p>
+                <h1 class="action-title" style="text-align: center; margin-bottom: 8px;">
+                    Bem-vinda de volta
+                </h1>
+
+                <p class="action-description" style="text-align: center; margin-bottom: 32px;">
+                    Acesse sua conta para continuar seu progresso.
+                </p>
 
                 <form id="login-form">
                     <div class="auth-input-group">
@@ -33,20 +40,27 @@
                         <input type="password" id="password" required placeholder="Sua senha">
                     </div>
 
-                    <div id="auth-error" class="auth-error hidden"></div>
+                    <div id="auth-error" style="color: #ff4d4d; margin-bottom: 10px; text-align: center; display: none;"></div>
 
-                    <button type="submit" class="btn-primary" id="login-btn">
-                        <span>Entrar</span>
+                    <button type="submit" class="btn-primary" id="login-btn" style="width: 100%;">
+                        Entrar
                     </button>
                 </form>
 
-                <div class="auth-links">
-                    <p>Ainda não tem uma conta? <a href="comecar">Cadastre-se</a></p>
+                <div class="auth-links" style="margin-top: 20px; text-align: center;">
+                    <p>
+                        Ainda não tem uma conta?
+                        <a href="comecar.html" style="color: #D4AF37; font-weight: bold;">
+                            Cadastre-se
+                        </a>
+                    </p>
                 </div>
             </div>
         </main>
     </div>
-    <script src="irgebbwehnaapeveaygj"></script>
+
+    <!-- ORDEM CORRETA DOS SCRIPTS -->
+    <script src="config.js"></script>
     <script src="login.js"></script>
 </body>
 
