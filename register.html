@@ -1,54 +1,44 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Desafio de 60 Dias</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Supabase SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-</head>
-<body>
-    <div class="app-container">
-        <main class="app-content">
-            <div class="auth-card">
-                <h1 class="action-title" style="text-align: center; margin-bottom: 8px;">Crie sua conta</h1>
-                <p class="action-description" style="text-align: center; margin-bottom: 32px;">Inicie sua jornada de 60 dias agora.</p>
-                
-                <form id="register-form">
-                    <div class="auth-input-group">
-                        <label for="name">Nome completo</label>
-                        <input type="text" id="name" required placeholder="Como deseja ser chamada?">
-                    </div>
+document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('register-form');
+    const authError = document.getElementById('auth-error');
+    const authSuccess = document.getElementById('auth-success');
 
-                    <div class="auth-input-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" required placeholder="Seu melhor e-mail">
-                    </div>
-                    
-                    <div class="auth-input-group">
-                        <label for="password">Senha</label>
-                        <input type="password" id="password" required placeholder="Mínimo 6 caracteres" minlength="6">
-                    </div>
-                    
-                    <div id="auth-error" class="auth-error hidden"></div>
-                    <div id="auth-success" class="auth-success hidden">Conta criada com sucesso! Redirecionando...</div>
+    if (registerForm) {
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Limpa mensagens anteriores
+            authError.classList.add('hidden');
+            authSuccess.classList.add('hidden');
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const name = document.getElementById('name').value;
 
-                    <button type="submit" class="btn-primary" id="register-btn">
-                        <span>Cadastrar</span>
-                    </button>
-                </form>
+            // Faz o cadastro no Supabase
+            const { data, error } = await supabase.auth.signUp({
+                email: email,
+                password: password,
+                options: {
+                    data: {
+                        full_name: name
+                    }
+                }
+            });
+
+            if (error) {
+                // Mostra o erro se algo der errado (ex: e-mail inválido)
+                authError.textContent = "Erro: " + error.message;
+                authError.classList.remove('hidden');
+            } else {
+                // Se o cadastro for bem-sucedido:
+                authSuccess.classList.remove('hidden');
                 
-                <div class="auth-links">
-                    <p>Já possui uma conta? <a href="login.html">Entrar</a></p>
-                </div>
-            </div>
-        </main>
-    </div>
-    <script src="config.js"></script>
-    <script src="register.js"></script>
-</body>
-</html>
+                // Aguarda 2 segundos e manda para o login
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+            }
+        });
+    }
+});
