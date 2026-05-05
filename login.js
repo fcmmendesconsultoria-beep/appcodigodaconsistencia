@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     authError.textContent = "Erro: " + error.message;
                     authError.style.display = 'block';
                 } else {
-                    window.location.href = 'app.html'; // sua página principal
+                    window.location.href = 'index.html'; // sua página principal
                 }
 
             } catch (err) {
